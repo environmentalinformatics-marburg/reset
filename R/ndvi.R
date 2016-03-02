@@ -1,0 +1,40 @@
+#' Normalized difference vegetation index
+#'
+#' @description
+#' Calculate the normalized difference vegetation index (NDVI; Tucker, 1979)
+#' from red and near-infrared wavelengths.
+#'
+#' @param red \code{Raster*} object, red band.
+#' @param nir \code{Raster*} object, near-infrared band.
+#' @param filename Output filename (optional).
+#' @param ... Additional arguments passed on to \code{\link{writeRaster}}.
+#'
+#' @return The calculated NDVI as \code{Raster*} object.
+#'
+#' @author Florian Detsch
+#'
+#' @seealso \code{\link{savi}}.
+#'
+#' @references
+#' Tucker, C.J. (1979). Red and photographic infrared linear combinations for
+#' monitoring vegetation. \emph{Remote Sensing of Environment} 8, 127-150,
+#' doi:10.1016/0034-4257(79)90013-0. Available online at
+#' \url{http://www.sciencedirect.com/science/article/pii/0034425779900130}
+#' (accessed on 2016-03-02).
+#'
+#' @export ndvi
+#' @name ndvi
+
+ndvi <- function(red,
+                 nir,
+                 filename = "",
+                 ...) {
+
+  raster::overlay(red, nir, fun = function(x, y) {
+    z <- (y - x) / (y + x)
+    z[z[] > 1] <- 1
+    z[z[] < -1] <- -1
+    return(z)
+  }, filename = filename, ...)
+
+}

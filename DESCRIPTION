@@ -1,8 +1,12 @@
 Package: reset
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Remote Sensing-Based Evapotranspiration
 Version: 0.1.0
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
+Authors@R: person("Florian", "Detsch", email = "florian.detsch@staff.uni-marburg.de", role = c("aut", "cre"))
 Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Depends:
+    raster,
+    methods
+License: GPL (>= 3) | file LICENSE
 LazyData: TRUE
+RoxygenNote: 5.0.1
