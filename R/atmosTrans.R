@@ -21,9 +21,9 @@
 #' 1173-1184, \url{http://dx.doi.org/10.1007/s00271-012-0396-3}
 #' (accessed 2016-03-07).
 #'
-#' @export atmosphericTransmissivity
-#' @name atmosphericTransmissivity
-atmosphericTransmissivity <- function(Pa, Kt = 1, theta, W) {
+#' @export atmosTrans
+#' @name atmosTrans
+atmosTrans <- function(Pa, Kt = 1, theta, W) {
   ## taken from Hwang et al. (2013, p. 1177)
   0.35 + 0.627 * 10^((-0.00146*Pa)/(Kt*cos(theta)) - 0.075*(W/cos(theta))^0.4)
 }

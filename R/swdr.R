@@ -3,10 +3,11 @@
 #' Shortwave downward radiation model proposed by Allen \emph{et al.} (2007; see
 #' References)
 #'
-#' @param g_sc \code{numeric}, solar constant.
+#' @param Gsc \code{numeric}, solar constant.
 #' @param theta Solar incidence angle.
-#' @param d_r Inverse squared relative earth-sun distance.
-#' @param tau_sw Broadband atmospheric transmissivity.
+#' @param d Inverse squared relative earth-sun distance.
+#' @param tau Broadband atmospheric transmissivity, typically derived from
+#' \code{\link{atmosphericTransmissivity}}.
 #'
 #' @references
 #' Allen, R.G., Tasumi, M. and R. Trezza (2007). Satellite-Based Energy Balance
@@ -15,9 +16,9 @@
 #' \url{http://dx.doi.org/10.1061/(ASCE)0733-9437(2007)133:4(395)}
 #' (accessed 2016-03-07).
 #'
-#' @export rsd
-#' @name rsd
-rsd <- function(g_sc = 1367, theta, d_r, tau_sw) {
+#' @export swdr
+#' @name swdr
+swdr <- function(Gsc = 1367, theta, d, tau) {
 
-  return(g_sc)
+  return(Gsc)
 }
