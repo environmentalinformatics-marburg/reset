@@ -6,7 +6,11 @@ Authors@R: person("Florian", "Detsch", email = "florian.detsch@staff.uni-marburg
 Description: More about what it does (maybe more than one line)
 Depends:
     raster,
+    rgdal,
     methods
+Imports:
+    satellite,
+    parallel
 License: GPL (>= 3) | file LICENSE
 LazyData: TRUE
 RoxygenNote: 5.0.1

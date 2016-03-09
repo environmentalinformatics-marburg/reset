@@ -8,7 +8,9 @@
 #' @title Remote Sensing-Based Evapotranspiration
 #' @author Florian Detsch
 #'
-#' @import raster methods
+#' @import raster rgdal methods
+#' @import parallel
+#' @importFrom satellite calcEarthSunDist
 #'
 #' @keywords package
 #'
