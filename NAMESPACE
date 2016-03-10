@@ -2,6 +2,8 @@
 
 export(atmosTrans)
 export(getAtmosProfBbox)
+export(getAtmosProfParam)
+export(getAtmosProfSds)
 export(ndvi)
 export(savi)
 export(swdr)
