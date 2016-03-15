@@ -3,7 +3,9 @@ Type: Package
 Title: Remote Sensing-Based Evapotranspiration
 Version: 0.1.0
 Authors@R: person("Florian", "Detsch", email = "florian.detsch@staff.uni-marburg.de", role = c("aut", "cre"))
-Description: More about what it does (maybe more than one line)
+Description: R implementation of the remote sensing-based evapotranspiration
+    model proposed by Allen et al. (2007). This package is currently under heavy
+    development and hence receives updates on a regular basis.
 Depends:
     raster,
     rgdal,
