@@ -14,9 +14,9 @@
 #'
 #' @seealso \code{\link{GDALinfo}}.
 #'
-#' @export getAtmosProfBbox
-#' @name getAtmosProfBbox
-getAtmosProfBbox <- function(x, cores = 1L) {
+#' @export getSwathExtent
+#' @name getSwathExtent
+getSwathExtent <- function(x, cores = 1L) {
 
   ## coordinate string patterns
   pattern <- paste0(c("WEST", "EAST", "SOUTH", "NORTH"), "BOUNDINGCOORDINATE")

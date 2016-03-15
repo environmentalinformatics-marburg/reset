@@ -1,18 +1,25 @@
-#' Extract atmospheric profiles
+#' Extract data layers from MODIS Swath products
 #'
 #' @description
-#' Extract and, to a limited extent, process scientific datasets (SDS) from the
-#' MODIS Atmospheric Profiles product (MOD/MYD07_L2).
+#' Extract and process scientific datasets (SDS) from MODIS Swath products.
 #'
 #' @param x \code{character}, one or multiple .hdf filename(s).
 #' @param prm \code{character}, one or multiple SDS to be processed. See
-#' \code{\link{getAtmosProfSds}} for valid layer names.
+#' \code{\link{getSwathSDSList}} for valid layer names.
 #' @param ext \code{Extent} or any other objects from which an \code{Extent} can
-#' be derived (optional), passed on to \code{\link[raster]{crop}}.
+#' be derived, passed on to \code{\link[raster]{crop}}. The required coordinate
+#' reference system is EPSG:4326 (see
+#' \url{http://spatialreference.org/ref/epsg/wgs-84/}). Note that although the
+#' usage of this argument is optional, specifying a reference extent results in
+#' coniderable speed gains, particularly when a \code{template} is provided.
+#' @param template \code{Raster*} template with parameters that the target SDS
+#' should be resampled to, see \code{\link{resample}}.
+#' @param method \code{character}, the resampling method passed on to
+#' \code{\link{resample}} if \code{template} is specified.
 #' @param dsn \code{character}, target folder for file output (optional). Note
 #' that if not provided, all resulting images are stored 'in memory'.
 #' @param cores \code{integer}, number of cores for parallel computing, see
-#' \code{\link{getAtmosProfBbox}}.
+#' \code{\link{getSwathExtent}}.
 #' @param verbose \code{logical}, determines whether to print additional
 #' information to the console.
 #'
@@ -21,13 +28,14 @@
 #'
 #' @seealso \code{\link{GDALinfo}}.
 #'
-#' @export getAtmosProfParam
-#' @name getAtmosProfParam
-getAtmosProfParam <- function(x, prm = "Surface_Pressure", ext = NULL, dsn = "",
-                              cores = 1L, verbose = FALSE) {
+#' @export getSwathSDS
+#' @name getSwathSDS
+getSwathSDS <- function(x, prm, ext = NULL, template = NULL,
+                        method = "bilinear", dsn = "", cores = 1L,
+                        verbose = FALSE) {
 
   ## retrieve bounding boxes
-  bb <- getAtmosProfBbox(x, cores = cores)
+  bb <- getSwathExtent(x, cores = cores)
 
   ## loop over files
   if (!is.list(bb)) bb <- list(bb)
@@ -51,8 +59,8 @@ getAtmosProfParam <- function(x, prm = "Surface_Pressure", ext = NULL, dsn = "",
     cl <- parallel::makePSOCKcluster(cores)
 
     jnk <- parallel::clusterEvalQ(cl, c(library(rgdal), library(raster)))
-    parallel::clusterExport(cl, c("x", "prm", "dsn", "sds", "bb", "h", "ext"),
-                            envir = environment())
+    parallel::clusterExport(cl, c("x", "prm", "dsn", "sds", "bb", "h", "ext",
+                                  "template", "method"), envir = environment())
 
 
     ## loop over parameters
@@ -71,13 +79,20 @@ getAtmosProfParam <- function(x, prm = "Surface_Pressure", ext = NULL, dsn = "",
       })
 
       # single-layer bands
-      if (info_prm[["bands"]] == 1) {
-        # rasterize band
-        rst_prm <- suppressWarnings(
-          raster::raster(rgdal::readGDAL(sds_prm, as.is = TRUE, silent = TRUE))
+      if (info_prm[["bands"]] == 1 | i == "Quality_Assurance_Near_Infrared") {
+
+        sgr <- suppressWarnings(
+          rgdal::readGDAL(sds_prm, as.is = TRUE, silent = TRUE)
         )
 
-        # multi-layer bands
+        # rasterize band
+        rst_prm <- if (i == "Quality_Assurance_Near_Infrared") {
+          raster::raster(t(sgr@data))
+        } else {
+          raster::raster(sgr)
+        }
+
+      # multi-layer bands
       } else {
         # rasterize band
         rst_prm <- suppressWarnings(
@@ -97,6 +112,14 @@ getAtmosProfParam <- function(x, prm = "Surface_Pressure", ext = NULL, dsn = "",
       # crop by reference extent (optional)
       if (!is.null(ext))
         rst_prm <- raster::crop(rst_prm, ext, snap = "out")
+
+      # project and resample
+      if (!is.null(template)) {
+        if (!raster::compareCRS(rst_prm, template))
+          rst_prm <- raster::projectRaster(rst_prm, template, method = method)
+
+        rst_prm <- raster::resample(rst_prm, template, method = method)
+      }
 
 
       ### file output (optional) -----------------------------------------------
