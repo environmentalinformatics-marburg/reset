@@ -1,13 +1,15 @@
 #' Shortwave downward radiation
 #'
 #' Shortwave downward radiation model proposed by Allen \emph{et al.} (2007; see
-#' References)
+#' References).
 #'
 #' @param Gsc \code{numeric}, solar constant.
-#' @param theta Solar incidence angle.
-#' @param d Inverse squared relative earth-sun distance.
+#' @param theta \code{RasterStack} (or \code{RasterBrick}), solar incidence
+#' angle.
+#' @param d \code{numeric} inverse squared relative earth-sun distance or
+#' \code{Date} object from which to derive it.
 #' @param tau Broadband atmospheric transmissivity, typically derived from
-#' \code{\link{atmosphericTransmissivity}}.
+#' \code{\link{atmosTrans}}.
 #'
 #' @references
 #' Allen, R.G., Tasumi, M. and R. Trezza (2007). Satellite-Based Energy Balance
@@ -16,9 +18,16 @@
 #' \url{http://dx.doi.org/10.1061/(ASCE)0733-9437(2007)133:4(395)}
 #' (accessed 2016-03-07).
 #'
+#' @seealso \code{\link{calcEarthSunDist}}.
+#'
 #' @export swdr
 #' @name swdr
-swdr <- function(Gsc = 1367, theta, d, tau) {
+swdr <- function(Gsc = 1367, d, tau, theta) {
 
-  return(Gsc)
+  ## if a date is supplied, compute relative squared earth-sun distance
+  if (class(d) == "Date")
+    d <- satellite::calcEarthSunDist(d, "Duffie")
+
+  ## compute shortwave downward radiation
+  Gsc * d * tau * cos(theta)
 }

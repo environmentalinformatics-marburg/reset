@@ -9,8 +9,7 @@
 #' @author Florian Detsch
 #'
 #' @import raster rgdal methods
-#' @import parallel
-#' @importFrom satellite calcEarthSunDist
+#' @import parallel satellite
 #'
 #' @keywords package
 #'

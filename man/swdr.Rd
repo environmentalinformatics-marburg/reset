@@ -4,21 +4,23 @@
 \alias{swdr}
 \title{Shortwave downward radiation}
 \usage{
-swdr(Gsc = 1367, theta, d, tau)
+swdr(Gsc = 1367, d, tau, theta)
 }
 \arguments{
 \item{Gsc}{\code{numeric}, solar constant.}
 
-\item{theta}{Solar incidence angle.}
-
-\item{d}{Inverse squared relative earth-sun distance.}
+\item{d}{\code{numeric} inverse squared relative earth-sun distance or
+\code{Date} object from which to derive it.}
 
 \item{tau}{Broadband atmospheric transmissivity, typically derived from
-\code{\link{atmosphericTransmissivity}}.}
+\code{\link{atmosTrans}}.}
+
+\item{theta}{\code{RasterStack} (or \code{RasterBrick}), solar incidence
+angle.}
 }
 \description{
 Shortwave downward radiation model proposed by Allen \emph{et al.} (2007; see
-References)
+References).
 }
 \references{
 Allen, R.G., Tasumi, M. and R. Trezza (2007). Satellite-Based Energy Balance
@@ -26,5 +28,8 @@ for Mapping Evapotranspiration with Internalized Calibration (METRIC) --
 Model. \emph{Journal of Irrigation and Drainage Engineering} 133(4), 395-406,
 \url{http://dx.doi.org/10.1061/(ASCE)0733-9437(2007)133:4(395)}
 (accessed 2016-03-07).
+}
+\seealso{
+\code{\link{calcEarthSunDist}}.
 }
 
