@@ -4,12 +4,16 @@
 \alias{ndvi}
 \title{Normalized difference vegetation index}
 \usage{
-ndvi(red, nir, filename = "", ...)
+ndvi(red, nir, cores = 1L, filename = "", ...)
 }
 \arguments{
 \item{red}{\code{Raster*} object, red band.}
 
 \item{nir}{\code{Raster*} object, near-infrared band.}
+
+\item{cores}{Number of cores for parallel computing. If \code{cores > 1L},
+a separate \code{filename} is required for each layer in \code{red} (and
+\code{nir}).}
 
 \item{filename}{Output filename (optional).}
 
