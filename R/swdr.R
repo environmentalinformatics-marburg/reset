@@ -1,15 +1,14 @@
 #' Shortwave downward radiation
 #'
 #' @description
-#' Shortwave downward radiation model proposed by Allen \emph{et al.} (2007; see
-#' References).
+#' Shortwave downward radiation model proposed by Allen \emph{et al.} (2007).
 #'
 #' @param Gsc \code{numeric}, solar constant.
 #' @param theta \code{RasterStack} (or \code{RasterBrick}), solar incidence
 #' angle.
 #' @param d \code{numeric} inverse squared relative earth-sun distance or
 #' \code{Date} object from which to derive it.
-#' @param tau Broadband atmospheric transmissivity, typically derived from
+#' @param tau Broadband atmospheric transmissivity, e.g. derived from
 #' \code{\link{atmosTrans}}.
 #'
 #' @references

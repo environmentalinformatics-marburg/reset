@@ -12,15 +12,14 @@ swdr(Gsc = 1367, d, tau, theta)
 \item{d}{\code{numeric} inverse squared relative earth-sun distance or
 \code{Date} object from which to derive it.}
 
-\item{tau}{Broadband atmospheric transmissivity, typically derived from
+\item{tau}{Broadband atmospheric transmissivity, e.g. derived from
 \code{\link{atmosTrans}}.}
 
 \item{theta}{\code{RasterStack} (or \code{RasterBrick}), solar incidence
 angle.}
 }
 \description{
-Shortwave downward radiation model proposed by Allen \emph{et al.} (2007; see
-References).
+Shortwave downward radiation model proposed by Allen \emph{et al.} (2007).
 }
 \references{
 Allen RG, Tasumi M, Trezza R (2007) Satellite-Based Energy Balance for

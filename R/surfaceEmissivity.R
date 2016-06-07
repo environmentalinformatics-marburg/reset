@@ -2,7 +2,7 @@ if ( !isGeneric("surfaceEmissivity") ) {
   setGeneric("surfaceEmissivity", function(ndvi, lai, ...)
     standardGeneric("surfaceEmissivity"))
 }
-#' Compute broadband surface emissivity
+#' Broadband surface emissivity
 #'
 #' @description
 #' Compute the broadband surface emissivity from the normalized difference
@@ -60,7 +60,7 @@ setMethod("surfaceEmissivity",
 
             raster::overlay(ndvi, lai, fun = function(x, y) {
               num_x <- x[]; num_y <- y[]
-              
+
               sapply(1:length(num_x), function(i) {
                 surfaceEmissivity(num_x[i], num_y[i])
               })

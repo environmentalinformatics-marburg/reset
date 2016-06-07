@@ -5,7 +5,7 @@
 \alias{surfaceEmissivity}
 \alias{surfaceEmissivity,Raster,Raster-method}
 \alias{surfaceEmissivity,numeric,numeric-method}
-\title{Compute broadband surface emissivity}
+\title{Broadband surface emissivity}
 \usage{
 \S4method{surfaceEmissivity}{numeric,numeric}(ndvi, lai)
 
