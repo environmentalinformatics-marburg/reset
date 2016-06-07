@@ -6,6 +6,9 @@
 #'
 #' @param red \code{Raster*} object, red band.
 #' @param nir \code{Raster*} object, near-infrared band.
+#' @param cores Number of cores for parallel computing. If \code{cores > 1L},
+#' a separate \code{filename} is required for each layer in \code{red} (and
+#' \code{nir}).
 #' @param filename Output filename (optional).
 #' @param ... Additional arguments passed on to \code{\link{writeRaster}}.
 #'
@@ -24,17 +27,38 @@
 #'
 #' @export ndvi
 #' @name ndvi
-
 ndvi <- function(red,
                  nir,
+                 cores = 1L,
                  filename = "",
                  ...) {
 
-  raster::overlay(red, nir, fun = function(x, y) {
+  ## ndvi function
+  ratio <- function(x, y) {
     z <- (y - x) / (y + x)
     z[z[] > 1] <- 1
     z[z[] < -1] <- -1
     return(z)
-  }, filename = filename, ...)
+  }
 
+  ## single-core version
+  if (cores == 1) {
+    raster::overlay(red, nir, fun = ratio, filename = filename, ...)
+
+  ## multi-core version
+  } else {
+    cl <- parallel::makePSOCKcluster(cores)
+
+    parallel::clusterEvalQ(cl, library(raster))
+    parallel::clusterExport(cl, c("red", "nir", "ratio", "filename", "..."),
+                            envir = environment())
+
+    lst <- parallel::parLapply(cl, 1:(raster::nlayers(red)), function(i) {
+      raster::overlay(red[[i]], nir[[i]], fun = ratio,
+                      filename = filename[i], ...)
+    })
+
+    parallel::stopCluster(cl)
+    raster::stack(lst)
+  }
 }

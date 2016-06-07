@@ -4,7 +4,7 @@
 \alias{savi}
 \title{Soil-adjusted vegetation index}
 \usage{
-savi(red, nir, L = 0.5, filename = "", ...)
+savi(red, nir, L = 0.5, cores = 1L, filename = "", ...)
 }
 \arguments{
 \item{red}{\code{Raster*} object, red band.}
@@ -12,6 +12,10 @@ savi(red, nir, L = 0.5, filename = "", ...)
 \item{nir}{\code{Raster*} object, near-infrared band.}
 
 \item{L}{\code{numeric} canopy background adjustment factor.}
+
+\item{cores}{Number of cores for parallel computing. If \code{cores > 1L},
+a separate \code{filename} is required for each layer in \code{red} (and
+\code{nir}).}
 
 \item{filename}{Output filename (optional).}
 
