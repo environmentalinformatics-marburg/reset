@@ -14,7 +14,7 @@
 #'
 #' @return A \code{Raster*} object holding about net radiation.
 #'
-#' @seealso \code{\link{swdr}}, \code{\link{swur}}, \code{\link{lwdr}},
+#' @seealso \code{\link{swdr}}, \code{\link{lwdr}},
 #' \code{\link{atmosphericEmissivity}}, \code{\link{lwur}}.
 #'
 #' @export netRadiation

@@ -28,7 +28,7 @@ energy budget (shortwave and longwave upward and downward radiation,
 respectively).
 }
 \seealso{
-\code{\link{swdr}}, \code{\link{swur}}, \code{\link{lwdr}},
+\code{\link{swdr}}, \code{\link{lwdr}},
 \code{\link{atmosphericEmissivity}}, \code{\link{lwur}}.
 }
 
