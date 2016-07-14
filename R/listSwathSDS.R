@@ -12,11 +12,11 @@
 #'
 #' @return A \code{character} vector holding SDS information.
 #'
-#' @seealso \code{\link{GDALinfo}}
+#' @seealso \code{\link{GDALinfo}}, \code{\link{getSwathSDS}}.
 #'
-#' @export getSwathSDSList
-#' @name getSwathSDSList
-getSwathSDSList <- function(x, type = c("raw", "name")) {
+#' @export listSwathSDS
+#' @name listSwathSDS
+listSwathSDS <- function(x, type = c("raw", "name")) {
 
   ## read sds information
   info <- suppressWarnings(rgdal::GDALinfo(x, returnScaleOffset = FALSE))
