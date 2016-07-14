@@ -9,8 +9,8 @@ getSwathExtent(x, cores = 1L)
 \arguments{
 \item{x}{\code{character}, one or multiple .hdf filename(s).}
 
-\item{cores}{\code{integer}, number of cores for parallel computing when
-processing large amounts of data.}
+\item{cores}{\code{integer}, number of cores for parallel computing, useful
+when processing large amounts of data.}
 }
 \value{
 If \code{length(x) == 1}, a single \code{Extent} object, else a

@@ -10,17 +10,17 @@ vaporPressure(ta, rh)
 vaporPressureSat(ta, slope = FALSE)
 }
 \arguments{
-\item{ta}{Air temperature in deg C.}
+\item{ta}{Air temperature (deg C).}
 
-\item{rh}{Relative humidity in \%.}
+\item{rh}{Relative humidity (\%).}
 
 \item{slope}{\code{logical}. If \code{TRUE}, the slope of the saturation
 vapor pressure curve is returned rather than the actual saturation vapor
 pressure.}
 }
 \value{
-The actual (or saturation) vapor pressure in kPa or, if \code{slope = TRUE},
-the slope of the saturation vapor pressure curve in kPa / deg C.
+The actual (or saturation) vapor pressure (kPa) or, if \code{slope = TRUE},
+the slope of the saturation vapor pressure curve (kPa / deg C).
 }
 \description{
 Calculate actual (Peng et al. 2006) and saturation vapor pressure (Allen and

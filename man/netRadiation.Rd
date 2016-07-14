@@ -20,7 +20,7 @@ netRadiation(rsd, rsu, rld, es, rlu, ...)
 \item{...}{Further arguments passed on to \code{\link{overlay}}.}
 }
 \value{
-A \code{Raster*} object holding about net radiation.
+A \code{Raster*} object holding information about net radiation.
 }
 \description{
 Compute the net radiation as the remainder of the 4-component land surface
@@ -29,6 +29,6 @@ respectively).
 }
 \seealso{
 \code{\link{swdr}}, \code{\link{lwdr}},
-\code{\link{atmosphericEmissivity}}, \code{\link{lwur}}.
+\code{\link{surfaceEmissivity}}, \code{\link{lwur}}.
 }
 

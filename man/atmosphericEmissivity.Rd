@@ -21,17 +21,19 @@ and used by Allen \emph{et al.} (2007) to derive the longwave downward
 radiation.
 }
 \references{
+Allen RG, Tasumi M, Trezza R (2007) Satellite-Based Energy Balance for
+Mapping Evapotranspiration with Internalized Calibration (METRIC) -- Model.
+\emph{Journal of Irrigation and Drainage Engineering} 133(4), 395-406,
+doi:10.1061/(ASCE)0733-9437(2007)133:4(395).
+
 Bastiaanssen WGM (1995) Regionalization of surface flux densities and
 moisture indicators in composite terrain: a remote sensing approach under
 clear skies in Mediterranean climates. PhD dissertation, CIP Data Koninklijke
 Bibliotheek, Den Haag, The Netherlands,
 \url{http://library.wur.nl/WebQuery/groenekennis/918192} (accessed
 2016-03-30).
-
-Allen RG, Tasumi M, Trezza R (2007) Satellite-Based Energy Balance for
-Mapping Evapotranspiration with Internalized Calibration (METRIC) -- Model.
-\emph{Journal of Irrigation and Drainage Engineering} 133(4), 395-406,
-\url{http://dx.doi.org/10.1061/(ASCE)0733-9437(2007)133:4(395)}
-(accessed 2016-03-07).
+}
+\seealso{
+\code{\link{lwdr}}.
 }
 

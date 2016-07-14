@@ -12,9 +12,9 @@
 \S4method{surfaceEmissivity}{Raster,Raster}(ndvi, lai, ...)
 }
 \arguments{
-\item{ndvi}{\code{numeric} or \code{Raster*}, NDVI.}
+\item{ndvi}{\code{numeric} or \code{Raster*} object, NDVI.}
 
-\item{lai}{\code{numeric} or \code{Raster*}, LAI.}
+\item{lai}{\code{numeric} or \code{Raster*} object, LAI.}
 
 \item{...}{In case of \code{Raster*} input, further arguments passed on to
 \code{\link{overlay}}.}
@@ -37,6 +37,7 @@ evapotranspiration using satellite imagery. PhD dissertation, University of
 Idaho, Moscow, Idaho, USA.
 }
 \seealso{
-\code{\link{lwur}}, \code{\link{overlay}}.
+\code{\link{ndvi}}, \code{\link{savi}}, \code{\link{lwur}},
+\code{\link{overlay}}.
 }
 

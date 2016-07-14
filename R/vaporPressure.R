@@ -5,15 +5,15 @@
 #' Robinson 2007) from air temperature and, in the case of the former, relative
 #' air humidity.
 #'
-#' @param ta Air temperature in deg C.
-#' @param rh Relative humidity in \%.
+#' @param ta Air temperature (deg C).
+#' @param rh Relative humidity (\%).
 #' @param slope \code{logical}. If \code{TRUE}, the slope of the saturation
 #' vapor pressure curve is returned rather than the actual saturation vapor
 #' pressure.
 #'
 #' @return
-#' The actual (or saturation) vapor pressure in kPa or, if \code{slope = TRUE},
-#' the slope of the saturation vapor pressure curve in kPa / deg C.
+#' The actual (or saturation) vapor pressure (kPa) or, if \code{slope = TRUE},
+#' the slope of the saturation vapor pressure curve (kPa / deg C).
 #'
 #' @references
 #' Allen RG, Robinson CW (2007) Evapotranspiration and Consumptive Irrigation

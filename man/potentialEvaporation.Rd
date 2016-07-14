@@ -4,7 +4,7 @@
 \alias{potentialEvaporation}
 \title{Potential evaporation}
 \usage{
-potentialEvaporation(Rn, G, delta, gamma, alpha_pt = 1.26)
+potentialEvaporation(Rn, G, delta, gamma, alpha = 1.26)
 }
 \arguments{
 \item{Rn}{\code{numeric} or \code{Raster*} object, net radiation (MJ m-2
@@ -20,12 +20,12 @@ vapor pressure curve (kPa / deg C) at air temperature, e.g. derived from
 \item{gamma}{\code{numeric} or \code{Raster*} object, psychrometric constant
 (kPa / deg C), e.g. derived from \code{\link{psychrometricConstant}}.}
 
-\item{alpha_pt}{\code{numeric}, Priestley-Taylor constant, defaults to 1.26
+\item{alpha}{\code{numeric}, Priestley-Taylor constant, defaults to 1.26
 for advection-free saturated surfaces (see References).}
 }
 \value{
 If any of the inputs is a \code{Raster*} object, a \code{Raster*} object;
-else a \code{numeric} (mm day-1).
+else a \code{numeric} object (in mm per logging interval).
 }
 \description{
 Calculate the potential evaporation. Currently available equations include

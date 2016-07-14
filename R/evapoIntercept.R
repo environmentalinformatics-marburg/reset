@@ -4,8 +4,8 @@
 #' Calculate the interception evaporation and related parameters.
 #'
 #' @param rH Relative humidity in \%.
-#' @param alpha \code{numeric}. Priestley and Taylor (1972) constant, defaults
-#' to \code{1.26}.
+#' @param alpha \code{numeric}. Priestley and Taylor (1972) constant, see
+#' \code{\link{potentialEvaporation}}.
 #' @param delta Slope of the saturation vapor pressure curve in kPa / deg C,
 #' typically derived from \code{\link{vaporPressureSat}}.
 #' @param gamma \code{numeric}. Psychrometric constant, defaults to \code{0.066}
@@ -23,7 +23,7 @@
 #' land--atmosphere water flux based on monthly AVHRR and ISLSCP-II data,
 #' validated at 16 FLUXNET sites. Remote Sensing of Environment 112: 901--919,
 #' doi:10.1016/j.rse.2007.06.025.
-
+#'
 #' Priestley CHB, Taylor RJ (1972) On the assessment of surface heat flux and
 #' evaporation using large scale parameters. Monthly Weather Review 100: 81--92,
 #' doi:10.1175/1520-0493(1972)100<0081:OTAOSH>2.3.CO;2.

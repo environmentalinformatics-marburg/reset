@@ -5,8 +5,8 @@
 #' (MOD/MYD07_L2).
 #'
 #' @param x \code{character}, one or multiple .hdf filename(s).
-#' @param cores \code{integer}, number of cores for parallel computing when
-#' processing large amounts of data.
+#' @param cores \code{integer}, number of cores for parallel computing, useful
+#' when processing large amounts of data.
 #'
 #' @return
 #' If \code{length(x) == 1}, a single \code{Extent} object, else a

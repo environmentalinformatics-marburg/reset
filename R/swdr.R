@@ -3,9 +3,7 @@
 #' @description
 #' Shortwave downward radiation model proposed by Allen \emph{et al.} (2007).
 #'
-#' @param Gsc \code{numeric}, solar constant.
-#' @param theta \code{RasterStack} (or \code{RasterBrick}), solar incidence
-#' angle.
+#' @param theta \code{Raster*} object, solar incidence angle.
 #' @param d \code{numeric} inverse squared relative earth-sun distance or
 #' \code{Date} object from which to derive it.
 #' @param tau Broadband atmospheric transmissivity, e.g. derived from
@@ -22,7 +20,10 @@
 #'
 #' @export swdr
 #' @name swdr
-swdr <- function(Gsc = 1367, d, tau, theta) {
+swdr <- function(d, tau, theta) {
+
+  ## define constants
+  Gsc <- 1367 # solar constant
 
   ## if a date is supplied, compute relative squared earth-sun distance
   if (class(d) == "Date")

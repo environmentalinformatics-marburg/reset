@@ -8,6 +8,7 @@
 #'
 #' @return Same as input (kPa).
 #'
+#' @seealso \code{\link{potentialEvaporation}}.
 #' @references
 #' Allen RG, Pereira LS, Raes D, Smith M (1998) Crop evaporation -
 #' Guidelines for computing crop water requirements. \emph{FAO Irrigation and

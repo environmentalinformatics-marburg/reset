@@ -9,8 +9,8 @@ if ( !isGeneric("surfaceEmissivity") ) {
 #' vegetation index (NDVI) and leaf area index (LAI) as proposed by Tasumi
 #' (2003; see References).
 #'
-#' @param ndvi \code{numeric} or \code{Raster*}, NDVI.
-#' @param lai \code{numeric} or \code{Raster*}, LAI.
+#' @param ndvi \code{numeric} or \code{Raster*} object, NDVI.
+#' @param lai \code{numeric} or \code{Raster*} object, LAI.
 #' @param ... In case of \code{Raster*} input, further arguments passed on to
 #' \code{\link{overlay}}.
 #'
@@ -21,7 +21,8 @@ if ( !isGeneric("surfaceEmissivity") ) {
 #' evapotranspiration using satellite imagery. PhD dissertation, University of
 #' Idaho, Moscow, Idaho, USA.
 #'
-#' @seealso \code{\link{lwur}}, \code{\link{overlay}}.
+#' @seealso \code{\link{ndvi}}, \code{\link{savi}}, \code{\link{lwur}},
+#' \code{\link{overlay}}.
 #'
 #' @examples
 #' surfaceEmissivity(ndvi = 0.5, lai = 2)

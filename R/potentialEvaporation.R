@@ -13,12 +13,12 @@
 #' \code{\link{vaporPressureSat}}.
 #' @param gamma \code{numeric} or \code{Raster*} object, psychrometric constant
 #' (kPa / deg C), e.g. derived from \code{\link{psychrometricConstant}}.
-#' @param alpha_pt \code{numeric}, Priestley-Taylor constant, defaults to 1.26
+#' @param alpha \code{numeric}, Priestley-Taylor constant, defaults to 1.26
 #' for advection-free saturated surfaces (see References).
 #'
 #' @return
 #' If any of the inputs is a \code{Raster*} object, a \code{Raster*} object;
-#' else a \code{numeric} (mm day-1).
+#' else a \code{numeric} object (in mm per logging interval).
 #'
 #' @seealso
 #' \code{\link{vaporPressureSat}}, \code{\link{psychrometricConstant}}.
@@ -35,11 +35,11 @@
 #'
 #' @export potentialEvaporation
 #' @name potentialEvaporation
-potentialEvaporation <- function(Rn, G, delta, gamma, alpha_pt = 1.26) {
+potentialEvaporation <- function(Rn, G, delta, gamma, alpha = 1.26) {
 
   ## define constants
   lambda <- 2.45   # latent heat of vaporization
 
   ## compute potential evaporation
-  alpha_pt * (delta / (delta + gamma) * Rn / lambda - G / lambda)
+  alpha * (delta / (delta + gamma) * Rn / lambda - G / lambda)
 }

@@ -5,7 +5,8 @@
 #' radiation to the soil which is, in turn, calculated from leaf area index.
 #'
 #' @param rn Net radiation.
-#' @param rns Net radiation to the soil.
+#' @param rns Net radiation to the soil, e.g. derived from
+#' \code{\link{radNetSoil}}.
 #' @param filename Output filename (optional).
 #' @param ... Additional arguments passed on to \code{\link{writeRaster}}.
 #'

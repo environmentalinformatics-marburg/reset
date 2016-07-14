@@ -2,10 +2,10 @@
 #'
 #' Broadband atmospheric transmissivity outlined in Hwang \emph{et al.} (2013).
 #'
-#' @param Pa \code{Raster*} object, atmospheric pressure (kPa).
-#' @param W \code{Raster*} object, water in the atmosphere (mm).
-#' @param theta \code{Raster*} object, solar zenith angle over planar surfaces
-#' (radians).
+#' @param Pa \code{numeric} or \code{Raster*} object, atmospheric pressure (kPa).
+#' @param W \code{numeric} or \code{Raster*} object, water in the atmosphere (mm).
+#' @param theta \code{numeric} or \code{Raster*} object, solar zenith angle over
+#' planar surfaces (radians).
 #' @param Kt \code{numeric}, turbidity coefficient, defaults to \code{1.0} for
 #' clean air (Allen \emph{et al.}, 1998).
 #'
@@ -19,7 +19,7 @@
 #' Hwang K, Choi M, Lee SO, Seo JW (2013) Estimation of instantaneous and daily
 #' net radiation from MODIS data under clear sky conditions: a case study in
 #' East Asia. \emph{Irrigation Science} 31, 1173-1184,
-#' \url{http://dx.doi.org/10.1007/s00271-012-0396-3} (accessed 2016-03-07).
+#' doi:10.1007/s00271-012-0396-3.
 #'
 #' @export atmosTrans
 #' @name atmosTrans

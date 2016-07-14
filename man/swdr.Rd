@@ -4,19 +4,16 @@
 \alias{swdr}
 \title{Shortwave downward radiation}
 \usage{
-swdr(Gsc = 1367, d, tau, theta)
+swdr(d, tau, theta)
 }
 \arguments{
-\item{Gsc}{\code{numeric}, solar constant.}
-
 \item{d}{\code{numeric} inverse squared relative earth-sun distance or
 \code{Date} object from which to derive it.}
 
 \item{tau}{Broadband atmospheric transmissivity, e.g. derived from
 \code{\link{atmosTrans}}.}
 
-\item{theta}{\code{RasterStack} (or \code{RasterBrick}), solar incidence
-angle.}
+\item{theta}{\code{Raster*} object, solar incidence angle.}
 }
 \description{
 Shortwave downward radiation model proposed by Allen \emph{et al.} (2007).

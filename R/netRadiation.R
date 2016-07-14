@@ -12,10 +12,10 @@
 #' @param rlu \code{Raster*}, longwave upward radiation.
 #' @param ... Further arguments passed on to \code{\link{overlay}}.
 #'
-#' @return A \code{Raster*} object holding about net radiation.
+#' @return A \code{Raster*} object holding information about net radiation.
 #'
 #' @seealso \code{\link{swdr}}, \code{\link{lwdr}},
-#' \code{\link{atmosphericEmissivity}}, \code{\link{lwur}}.
+#' \code{\link{surfaceEmissivity}}, \code{\link{lwur}}.
 #'
 #' @export netRadiation
 #' @name netRadiation

@@ -11,14 +11,14 @@ getSwathSDS(x, prm, ext = NULL, template = NULL, method = "bilinear",
 \item{x}{\code{character}, one or multiple .hdf filename(s).}
 
 \item{prm}{\code{character}, one or multiple SDS to be processed. See
-\code{\link{getSwathSDSList}} for valid layer names.}
+\code{\link{listSwathSDS}} for valid layer names.}
 
 \item{ext}{\code{Extent} or any other objects from which an \code{Extent} can
 be derived, passed on to \code{\link[raster]{crop}}. The required coordinate
 reference system is EPSG:4326 (see
 \url{http://spatialreference.org/ref/epsg/wgs-84/}). Note that although the
 usage of this argument is optional, specifying a reference extent results in
-coniderable speed gains, particularly when a \code{template} is provided.}
+considerable speed gains, particularly when a \code{template} is provided.}
 
 \item{template}{\code{Raster*} template with parameters that the target SDS
 should be resampled to, see \code{\link{resample}}.}

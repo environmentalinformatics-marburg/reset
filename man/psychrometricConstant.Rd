@@ -24,4 +24,7 @@ Drainage Paper} 56. Food and Agriculture Organization of the United Nations
 \url{https://appgeodb.nancy.inra.fr/biljou/pdf/Allen_FAO1998.pdf} (accessed
 2016-03-07).
 }
+\seealso{
+\code{\link{potentialEvaporation}}.
+}
 

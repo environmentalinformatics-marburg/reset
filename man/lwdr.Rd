@@ -4,12 +4,11 @@
 \alias{lwdr}
 \title{Longwave downward radiation}
 \usage{
-lwdr(ea, sigma = 5.67e-08, ta, ...)
+lwdr(ea, ta, ...)
 }
 \arguments{
-\item{ea}{\code{Raster*} object, effective atmospheric emissivity.}
-
-\item{sigma}{\code{numeric}, Stefan-Boltzmann constant.}
+\item{ea}{\code{Raster*} object, effective atmospheric emissivity, e.g.
+derived from \code{\link{atmosphericEmissivity}}.}
 
 \item{ta}{\code{Raster*} object, air (or land surface) temperature.}
 
@@ -23,8 +22,7 @@ Hwang \emph{et al.} (2013; currently not implemented).
 Allen RG, Tasumi M, Trezza R (2007) Satellite-Based Energy Balance for
 Mapping Evapotranspiration with Internalized Calibration (METRIC) -- Model.
 \emph{Journal of Irrigation and Drainage Engineering} 133(4), 395-406,
-\url{http://dx.doi.org/10.1061/(ASCE)0733-9437(2007)133:4(395)}
-(accessed 2016-03-07).
+doi:10.1061/(ASCE)0733-9437(2007)133:4(395).
 
 Hwang K, Choi M, Lee SO, Seo JW (2013) Estimation of instantaneous and daily
 net radiation from MODIS data under clear sky conditions: a case study in
@@ -33,6 +31,6 @@ East Asia. \emph{Irrigation Science} 31, 1173-1184,
 2016-03-30).
 }
 \seealso{
-\code{\link{atmosphericEmissivity}}
+\code{\link{atmosphericEmissivity}}.
 }
 

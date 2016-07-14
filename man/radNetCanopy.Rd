@@ -9,7 +9,8 @@ radNetCanopy(rn, rns, filename = "", ...)
 \arguments{
 \item{rn}{Net radiation.}
 
-\item{rns}{Net radiation to the soil.}
+\item{rns}{Net radiation to the soil, e.g. derived from
+\code{\link{radNetSoil}}.}
 
 \item{filename}{Output filename (optional).}
 

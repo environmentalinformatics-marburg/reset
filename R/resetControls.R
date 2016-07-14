@@ -1,4 +1,4 @@
-### conversion function: to (mega-)joules -----
+### conversion function: to (mega or kilo)joules -----
 
 toJoules <- function(x, y = 3600L, unit = c("MJ", "KJ", "J")) {
 
