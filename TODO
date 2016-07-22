@@ -1,0 +1,2 @@
+- wdrvi(..., cores = 3L) (or any other vegetation index) without filename or
+  optional arguments specified throws an error
