@@ -24,4 +24,3 @@ MODIS Atmospheric Profiles product (MOD/MYD_L2).
 \seealso{
 \code{\link{GDALinfo}}, \code{\link{getSwathSDS}}.
 }
-

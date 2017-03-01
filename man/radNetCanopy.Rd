@@ -29,4 +29,3 @@ doi:10.1016/j.rse.2007.06.025.
 \seealso{
 \code{\link{netRadiation}}, \code{\link{radNetSoil}}.
 }
-

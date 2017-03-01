@@ -31,6 +31,7 @@ air humidity.
 \itemize{
 \item \code{vaporPressureSat}: Saturation vapor pressure in kPa.
 }}
+
 \references{
 Allen RG, Robinson CW (2007) Evapotranspiration and Consumptive Irrigation
 Water Requirements for Idaho. University of Idaho Research and Extension
@@ -53,4 +54,3 @@ Chinese Geographical Science 16(3): 260--264, doi:10.1007/s11769-006-0260-6.
 Tetens O (1930) Ueber einige meteorologische Begriffe. Zeitschrift fuer
 Geophysik 6: 297--309.
 }
-

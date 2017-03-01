@@ -3,8 +3,8 @@
 \docType{methods}
 \name{surfaceEmissivity}
 \alias{surfaceEmissivity}
-\alias{surfaceEmissivity,Raster,Raster-method}
 \alias{surfaceEmissivity,numeric,numeric-method}
+\alias{surfaceEmissivity,Raster,Raster-method}
 \title{Broadband surface emissivity}
 \usage{
 \S4method{surfaceEmissivity}{numeric,numeric}(ndvi, lai)
@@ -40,4 +40,3 @@ Idaho, Moscow, Idaho, USA.
 \code{\link{ndvi}}, \code{\link{savi}}, \code{\link{lwur}},
 \code{\link{overlay}}.
 }
-

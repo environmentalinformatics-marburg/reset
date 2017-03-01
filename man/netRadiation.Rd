@@ -31,4 +31,3 @@ respectively).
 \code{\link{swdr}}, \code{\link{lwdr}},
 \code{\link{surfaceEmissivity}}, \code{\link{lwur}}.
 }
-

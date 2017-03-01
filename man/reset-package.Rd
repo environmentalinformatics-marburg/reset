@@ -15,4 +15,3 @@ More about what it does (maybe more than one line)
 Florian Detsch
 }
 \keyword{package}
-

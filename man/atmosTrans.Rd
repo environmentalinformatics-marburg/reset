@@ -32,4 +32,3 @@ net radiation from MODIS data under clear sky conditions: a case study in
 East Asia. \emph{Irrigation Science} 31, 1173-1184,
 doi:10.1007/s00271-012-0396-3.
 }
-

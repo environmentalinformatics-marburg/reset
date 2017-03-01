@@ -35,4 +35,3 @@ doi:10.1007\%2FBF02243377.
 \seealso{
 \code{\link{netRadiation}}.
 }
-

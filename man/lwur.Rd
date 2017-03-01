@@ -26,4 +26,3 @@ doi:10.1061/(ASCE)0733-9437(2007)133:4(395).
 \seealso{
 \code{\link{surfaceEmissivity}}.
 }
-

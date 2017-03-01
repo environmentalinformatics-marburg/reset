@@ -45,4 +45,3 @@ Extract and process scientific datasets (SDS) from MODIS Swath products.
 \seealso{
 \code{\link{GDALinfo}}.
 }
-

@@ -23,4 +23,3 @@ Retrieve bounding box from the MODIS Atmospheric Profiles product
 \seealso{
 \code{\link{GDALinfo}}.
 }
-

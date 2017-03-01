@@ -44,4 +44,3 @@ evaporation using large scale parameters. \emph{Monthly Weather Reviews} 100,
 \seealso{
 \code{\link{vaporPressureSat}}, \code{\link{psychrometricConstant}}.
 }
-

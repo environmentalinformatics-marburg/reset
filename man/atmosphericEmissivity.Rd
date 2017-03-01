@@ -36,4 +36,3 @@ Bibliotheek, Den Haag, The Netherlands,
 \seealso{
 \code{\link{lwdr}}.
 }
-

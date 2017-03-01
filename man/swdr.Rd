@@ -28,4 +28,3 @@ Mapping Evapotranspiration with Internalized Calibration (METRIC) -- Model.
 \seealso{
 \code{\link{calcEarthSunDist}}, \code{\link{atmosTrans}}.
 }
-

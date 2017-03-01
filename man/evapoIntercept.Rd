@@ -33,6 +33,7 @@ Calculate the interception evaporation and related parameters.
 \itemize{
 \item \code{surfaceWetness}: Relative surface wetness.
 }}
+
 \references{
 Fisher JB, Tu KP, Baldocchi DD (2008) Global estimates of the
 land--atmosphere water flux based on monthly AVHRR and ISLSCP-II data,
@@ -46,4 +47,3 @@ doi:10.1175/1520-0493(1972)100<0081:OTAOSH>2.3.CO;2.
 \seealso{
 \code{\link{surfaceWetness}}, \code{\link{radNetCanopy}}.
 }
-

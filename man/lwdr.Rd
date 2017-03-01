@@ -33,4 +33,3 @@ East Asia. \emph{Irrigation Science} 31, 1173-1184,
 \seealso{
 \code{\link{atmosphericEmissivity}}.
 }
-
